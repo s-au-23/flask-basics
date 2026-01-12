@@ -78,6 +78,19 @@ def projects():
 def blog():
     return render_template('blog.html', info=PERSONAL_INFO, posts=BLOG_POSTS)
 
+@app.route('/skill/<skill_name>')
+def skill_projects(skill_name):
+    filtered_projects = [
+        project for project in PROJECTS
+        if skill_name in project['skills']
+    ]
+    return render_template(
+        'projects.html',
+        projects=filtered_projects,
+        skill=skill_name
+    )
+
+
 
 @app.route('/project/<int:project_id>')  # Dynamic route for individual project
 def project_detail(project_id):
