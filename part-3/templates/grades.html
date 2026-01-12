@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grades</title>
+</head>
+<body>
+    <h1>Student Grades</h1>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Subject</th>
+            <th>Grade</th>
+        </tr>
+
+        {% for subject, grade in grades.items() %}
+        <tr>
+            <td>{{ subject }}</td>
+            <td>{{ grade }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

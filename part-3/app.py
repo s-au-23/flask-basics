@@ -30,8 +30,22 @@ def profile():
                            name=user_data['name'],
                            age=user_data['age'],
                            course=user_data['course'],
+                           email=user_data.get('email', 'example@gmail.com'),
+                           city=user_data.get('city', 'Pune'),
+                           college=user_data.get('college', 'City University'),
+                           skills=user_data.get('skills', ['HTML', 'CSS', 'JavaScript']),
                            is_enrolled=user_data['is_enrolled'])
 
+@app.route("/grades")
+def grades():
+    student_grades = {
+        "Mathematics": "A",
+        "Physics": "B+",
+        "Chemistry": "A-",
+        "English": "B",
+        "Computer Science": "A+"
+    }
+    return render_template("grades.html", grades=student_grades)
 
 @app.route('/skills')
 def skills():
@@ -47,6 +61,18 @@ def projects():
         {'name': 'Weather App', 'status': 'Planned', 'tech': 'JavaScript'},
     ]
     return render_template('projects.html', projects=project_list)
+
+@app.route("/grades")
+def grades():
+    # Dictionary of subjects and grades
+    student_grades = {
+        "Mathematics": "A",
+        "Physics": "B+",
+        "Chemistry": "A-",
+        "English": "B",
+        "Computer Science": "A+"
+    }
+    return render_template("grades.html", grades=student_grades)
 
 
 if __name__ == '__main__':
