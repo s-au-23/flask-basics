@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+    <h1>Search</h1>
+
+    <form onsubmit="event.preventDefault(); window.location.href='/search/' + query.value;">
+        <input type="text" id="query" placeholder="Search..." required>
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>

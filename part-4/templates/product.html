@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product</title>
+</head>
+<body>
+    <h1>Product Details</h1>
+
+    {% if product %}
+        <p><b>ID:</b> {{ product_id }}</p>
+        <p><b>Name:</b> {{ product.name }}</p>
+        <p><b>Price:</b> ₹{{ product.price }}</p>
+    {% else %}
+        <p style="color:red;">Product Not Found</p>
+    {% endif %}
+</body>
+</html>

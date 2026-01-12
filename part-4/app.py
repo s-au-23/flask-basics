@@ -41,6 +41,38 @@ def user_post(username, post_id):
 @app.route('/about/')  # Trailing slash means both /about and /about/ work
 def about():
     return render_template('about.html')
+@app.route('/product/<int:product_id>')
+def product(product_id):
+    products = {
+        1: {'name': 'Laptop', 'price': 55000},
+        2: {'name': 'Mobile', 'price': 20000},
+        3: {'name': 'Headphones', 'price': 3000}
+    }
+
+    product = products.get(product_id)
+    return render_template('product.html', product=product, product_id=product_id)
+@app.route('/category/<category_name>/product/<int:product_id>')
+def category_product(category_name, product_id):
+    products = {
+        1: 'Laptop',
+        2: 'Mobile',
+        3: 'Headphones'
+    }
+
+    product = products.get(product_id)
+    return render_template(
+        'category_product.html',
+        category=category_name,
+        product=product,
+        product_id=product_id
+    )
+@app.route('/search/<query>')
+def search(query):
+    return render_template('search.html', query=query)
+@app.route('/search', methods=['GET', 'POST'])
+def search_form():
+    return render_template('search_form.html')
+
 
 
 @app.route('/links')  # Demonstrates url_for() - generates URLs dynamically (better than hardcoding!)
