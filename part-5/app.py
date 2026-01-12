@@ -18,11 +18,11 @@ app = Flask(__name__)
 # =============================================================================
 
 PERSONAL_INFO = {
-    'name': 'Your Name',
+    'name': 'Gauri Suryawanshi',
     'title': 'Web Developer',
     'bio': 'A passionate developer learning Flask and web development.',
-    'email': 'your.email@example.com',
-    'github': 'https://github.com/yourusername',
+    'email': 'suryawanshigauri23@gmail.com',
+    'github': 'https://github.com/s-au-23',
     'linkedin': 'https://linkedin.com/in/yourusername',
 }
 
