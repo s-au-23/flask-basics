@@ -25,6 +25,20 @@ PERSONAL_INFO = {
     'github': 'https://github.com/s-au-23',
     'linkedin': 'https://linkedin.com/in/yourusername',
 }
+BLOG_POSTS = [
+    {
+        'id': 1,
+        'title': 'My First Blog',
+        'content': 'This is my first blog post!',
+        'date': '2026-01-12'
+    },
+    {
+        'id': 2,
+        'title': 'Learning Flask',
+        'content': 'Flask is very easy and powerful!',
+        'date': '2026-01-13'
+    }
+]
 
 SKILLS = [
     {'name': 'Python', 'level': 80},
@@ -58,6 +72,11 @@ def about():
 @app.route('/projects')
 def projects():
     return render_template('projects.html', info=PERSONAL_INFO, projects=PROJECTS)
+
+
+@app.route('/blog')
+def blog():
+    return render_template('blog.html', info=PERSONAL_INFO, posts=BLOG_POSTS)
 
 
 @app.route('/project/<int:project_id>')  # Dynamic route for individual project
